@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Handlebar Helpers demo</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+</head>
+<body>
+    <!-- input section -->
+    <input type="text" id="search">
+    <select id="sortby">
+        <option value="title">title</option>
+        <option value="body">body</option>
+    </select>
+    <select id="sortorder">
+        <option value="ASC">ASC</option>
+        <option value="DESC">DESC</option>
+    </select>
+    <button onclick="updateTemplate()">Go</button>
+    <hr>
+    <!-- handlebar template for posts -->
+    <script id="posts-template" type="text/x-handlebars-template">
+        {{#searchsort data}}
+            <strong>Title: {{this.title}}</strong>
+            <p>body: {{this.body}}</p>
+        {{/searchsort}}
+    </script>
+
+    <!-- posts placeholder -->
+    <div id="posts-container"></div>
+
+    
+    <script src="script.js"></script>
+    <script src="helpers.js"></script>
+</body>
+</html>
